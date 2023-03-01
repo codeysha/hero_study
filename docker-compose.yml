@@ -21,7 +21,7 @@ services:
     container_name: app
     depends_on:
       - database
-    restart: on-failure
+    restart: unless-stopped
     build:
       context: app/
       dockerfile: Dockerfile
