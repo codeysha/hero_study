@@ -21,9 +21,9 @@ services:
     container_name: app
     depends_on:
       - database
-    restart: always
+    restart: on-failure
     build:
-      context: ./
+      context: app/
       dockerfile: Dockerfile
     ports:
-      - "9090:9090"
+      - "${APP_PORT}:8080"
