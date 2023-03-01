@@ -1,0 +1,29 @@
+version: "3"
+services:
+  database:
+    build:
+      context: db/
+      dockerfile: Dockerfile
+      args:
+        - MYSQL_DATABASE=${MYSQL_DATABASE}
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    container_name: database
+    restart: unless-stopped
+    ports:
+      - "${MYSQL_PORT}:3306"
+
+  java:
+    image: app:latest
+    container_name: app
+    depends_on:
+      - database
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "9090:9090"
