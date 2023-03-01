@@ -62,4 +62,10 @@ CREATE TABLE `learners` (
   CONSTRAINT `learners_FK_2` FOREIGN KEY (`degree_id`) REFERENCES `degree` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+INSERT INTO status (id, description) VALUES (1, 'Учится');
+INSERT INTO status (id, description) VALUES (2, 'Отчислен');
+INSERT INTO status (id, description) VALUES (3, 'Выпускник');
 
+INSERT INTO `degree` (id, description) VALUES (1, 'Бакалавр');
+INSERT INTO `degree` (id, description) VALUES (2, 'Магистр');
+INSERT INTO `degree` (id, description) VALUES (3, 'Аспирант');
