@@ -26,7 +26,7 @@ import org.hibernate.annotations.OnDeleteAction;
 @Entity(name = "learner")
 @Table(
   name = "learners",
-  schema = "hero_db_1235")
+  schema = "${MYSQL_DATABASE}")
 public class Learner {
 
   @Id

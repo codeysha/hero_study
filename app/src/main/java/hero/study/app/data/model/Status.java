@@ -21,7 +21,7 @@ import lombok.Setter;
 @Entity(name = "status")
 @Table(
   name = "status",
-  schema = "hero_db_1235")
+  schema = "${MYSQL_DATABASE}")
 public class Status {
   @Id
   @Column(name = "id", nullable = false)

@@ -17,8 +17,8 @@ RUN echo "hello"
 ##
 FROM openjdk:11
 WORKDIR /
+ARG MYSQL_DATABASE
+ENV MYSQL_DATABASE=$MYSQL_DATABASE
 COPY --from=build /usr/app/build/libs/app-v1.jar /
-#RUN java -jar /app-v1.jar
-#RUN echo "test"
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app-v1.jar"]
+ENTRYPOINT ["java", "-jar --MYSQL_DATABASE=$MYSQL_DATABASE", "/app-v1.jar"]

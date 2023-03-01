@@ -21,7 +21,7 @@ import lombok.Setter;
 @Entity(name = "degree")
 @Table(
   name = "degree",
-  schema = "hero_db_1235")
+  schema = "${MYSQL_DATABASE}")
 public class Degree {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY) // todo: check auto incr

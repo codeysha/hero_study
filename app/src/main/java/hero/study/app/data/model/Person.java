@@ -21,7 +21,7 @@ import lombok.Setter;
 @Entity(name = "person")
 @Table(
   name = "persons",
-  schema = "hero_db_1235")
+  schema = "${MYSQL_DATABASE}")
 public class Person {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
