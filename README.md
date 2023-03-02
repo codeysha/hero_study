@@ -7,4 +7,9 @@ studying hard
 3) docker exec database bash /generator.sh (generate dummy data)
 4) docker exec database bash /clear.sh (clean dummy data)
 
+
+https://github.com/spring-projects/spring-boot/issues/24229
+
+please add env variables manually to application.properties file
+
 thx
